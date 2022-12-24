@@ -190,7 +190,7 @@ typedef struct APP_CONFIG //AppConfig
 
 #if __has_include("creds.h") 
 //# include "myinclude.h"
- #error
+ //#error
 #endif
 
 #include "creds.h" //contains SSID/KEY pairs
