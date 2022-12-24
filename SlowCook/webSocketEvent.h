@@ -1,8 +1,8 @@
-#include <WebSocketsServer.h>
+#include <WebSocketsServer_Generic.h>
 
-WebSocketsServer webSocket(81);
+WebSocketsServer webSocket = WebSocketsServer(81);
 
-void webSocketEvent(uint8_t num, WStype_t type, uint8_t * payload, size_t length)
+void webSocketEvent(const uint8_t& num, const WStype_t& type, uint8_t * payload, const size_t& length)
 {
   Serial.println();
   Serial.print(F("clientid="));
