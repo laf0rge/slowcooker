@@ -2,7 +2,7 @@ void setup()
 {
 #include "_init.h"  //
 #include "http.h"
-#include "OTA.h"
+//#include "OTA.h"
   server.on("/", handle_root);
   server.on("/pid_config", handle_pid_config);
   server.on("/pid_config_update", handle_pid_config_update);
