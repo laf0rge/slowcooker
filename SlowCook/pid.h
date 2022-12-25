@@ -6,18 +6,6 @@
 
 */
 
-// resistance at 25 degrees C
-#define THERMISTORNOMINAL 5000
-// temp. for nominal resistance (almost always 25 C)
-#define TEMPERATURENOMINAL 25
-// The beta coefficient of the thermistor (usually 3000-4000)
-#define BCOEFFICIENT 4216 //3950
-// the value of the 'other' resistor
-#define SERIESRESISTOR 5000
-
-// What pin to connect the sensor to
-#define THERMISTORPIN A0
-
 #ifdef USE_DS18B20
 OneWire oneWire(14); // D5
 DallasTemperature sensors(&oneWire);
@@ -36,6 +24,16 @@ DHT dht(DHTPIN, DHTTYPE);
 int totalfails;
 
 #ifdef USE_ADC
+// resistance at 25 degrees C
+#define THERMISTORNOMINAL 5000
+// temp. for nominal resistance (almost always 25 C)
+#define TEMPERATURENOMINAL 25
+// The beta coefficient of the thermistor (usually 3000-4000)
+#define BCOEFFICIENT 4216 //3950
+// the value of the 'other' resistor
+#define SERIESRESISTOR 5000
+// What pin to connect the sensor to
+#define THERMISTORPIN A0
 int sensorPin = A0;
 #endif
 
