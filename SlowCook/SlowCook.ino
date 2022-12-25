@@ -237,7 +237,7 @@ typedef struct APP_CONFIG //AppConfig
 APP_CONFIG AppConfig;
 
 ESP8266WebServer server(80); //instantiate server object of type class ESP8266WebServer
-//WiFiClient client;
+WiFiClient client;
 HTTPClient http;  //instantiate http object of type class HTTPClient
 #include "helpers.h"
 #include "mdns_query.h"

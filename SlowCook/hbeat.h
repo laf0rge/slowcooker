@@ -12,7 +12,7 @@ void sendHeartBeat(void)
           URL_Heartbeat, AppConfig.EpHostname, ipaddr[0], ipaddr[1], ipaddr[2], ipaddr[3], ticks, currentHeat, currentHumidity, CV, error, iTerm, dTerm, getPinMode(HEATER), millis());
 
   // http.begin(URL_Heartbeat + String(AppConfig.EpHostname) + "&ip=" + WiFi.localIP().toString() + buffers);//"&millis=" + millis() + "&joto=" +  currentHeat + "&hum=" + currentHumidity);
-  http.begin(buffers);//"&millis=" + millis() + "&joto=" +  currentHeat + "&hum=" + currentHumidity);
+  http.begin(client, buffers);//"&millis=" + millis() + "&joto=" +  currentHeat + "&hum=" + currentHumidity);
   Serial.print(buffers);
   int httpCode = http.GET();
   Serial.print(F(" Http Resp: "));
