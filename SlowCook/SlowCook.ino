@@ -85,6 +85,7 @@
 
 */
 
+#include <pins_arduino.h>
 
 //#define USE_MAX6675
 #define USE_DHT
@@ -107,7 +108,7 @@
 #define HEATER_OFF "heater_off"
 #define HEATER_ON "heater_on"
 
-#define HEATER D0
+#define HEATER 16 // D0
 
 #define HEATER_HIGH digitalWrite(HEATER, HIGH)
 #define HEATER_LOW digitalWrite(HEATER, LOW)
@@ -134,7 +135,7 @@ const char __SKETCH__[] = __FILE__; //Used to get the current path
 #include <ArduinoOTA.h> //Update Flash Over The Air
 #include <EEPROM.h>     //Saves various settings 
 
-const byte io_pins [9] =     {D0, D1, D2, D3, D4, D5, D6, D7, D8};
+const byte io_pins [9] =     {0, 1, 2, 3, 4, 5, 6, 7, 8}; // D0..D8
 //const byte io_pins[9] =    {16,  5,  4,  0,  2, 14, 12, 13, 15};
 
 int ticks = 0;  //Keeps track of how many times the PID loop has been executed.

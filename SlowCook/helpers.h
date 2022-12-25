@@ -75,7 +75,7 @@ int getPinMode(int pin) //Return 0 for Input and 1 Output
 {
   int  bit = digitalPinToBitMask(pin);
 
-  if (pin == D0)  //GPIO 16
+  if (pin == 16)  //GPIO 16
   {
     //port = digitalPinToPort(HEATER);
     volatile uint32_t *ddr = ((volatile uint32_t*) &GP16E);
