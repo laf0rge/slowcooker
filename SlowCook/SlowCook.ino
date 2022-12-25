@@ -88,7 +88,8 @@
 #include <pins_arduino.h>
 
 //#define USE_MAX6675
-#define USE_DHT
+#define USE_DS18B20
+//#define USE_DHT
 //#define USE_ADC
 
 #define SerialSpeed 115200

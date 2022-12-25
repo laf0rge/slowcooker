@@ -14,6 +14,10 @@ for (uint8_t t = 4; t > 0; t--)
   delay(100);
 }
 
+#ifdef USE_DS18B20
+sensors.begin();
+#endif
+
 Serial.println(F("SizeOf AppConfig:"));
 Serial.println(sizeof(AppConfig));
 if (sizeof(AppConfig) > 511)

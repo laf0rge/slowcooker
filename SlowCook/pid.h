@@ -1,3 +1,6 @@
+#include <DallasTemperature.h>
+
+
 /*
    PID.ino
 
@@ -15,6 +18,10 @@
 // What pin to connect the sensor to
 #define THERMISTORPIN A0
 
+#ifdef USE_DS18B20
+OneWire oneWire(14); // D5
+DallasTemperature sensors(&oneWire);
+#endif
 
 #ifdef USE_DHT
 #define DHTPIN D5
@@ -53,6 +60,11 @@ int computePID(float spPID)
   while (isnan(currentHeat) && (NaNCount++ < 4))
   {
     doservers();
+#ifdef USE_DS18B20
+    sensors.requestTemperatures();
+    currentHeat = sensors.getTempCByIndex(0) + AppConfig.PID[cal];
+#endif
+
 #ifdef USE_DHT
     currentHeat = dht.readTemperature() + AppConfig.PID[cal];
     //Serial.print("DHT Temp:");
